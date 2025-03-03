@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch & Countdown</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="screen-initial" class="screen active">
+            <h1>Select Mode</h1>
+            <div class="mode-selection">
+                <button id="stopwatch-btn">Stopwatch</button>
+                <button id="countdown-btn">Countdown</button>
+            </div>
+        </div>
+        <div id="screen-stopwatch" class="screen">
+            <h1>Stopwatch</h1>
+            <div id="timer-container">
+                <h2 id="stopwatch-display">00:00:00.000</h2>
+                <div class="controls">
+                    <button id="start-stopwatch">Start</button>
+                    <button id="reset-stopwatch">Reset</button>
+                    <button id="back-stopwatch">Back</button>
+                </div>
+            </div>
+        </div>
+        <div id="screen-countdown" class="screen">
+            <h1>Countdown</h1>
+            <div id="timer-container">
+                <h2 id="countdown-display">00:00:00.000</h2>
+                <div class="num-pad">
+                    <button class="num" data-value="1">1</button>
+                    <button class="num" data-value="2">2</button>
+                    <button class="num" data-value="3">3</button>
+                    <button class="num" data-value="4">4</button>
+                    <button class="num" data-value="5">5</button>
+                    <button class="num" data-value="6">6</button>
+                    <button class="num" data-value="7">7</button>
+                    <button class="num" data-value="8">8</button>
+                    <button class="num" data-value="9">9</button>
+                    <button id="clear-countdown">Clear</button>
+                    <button class="num" data-value="0">0</button>
+                    <button id="set-countdown">Set</button>
+                </div>
+                <div class="controls">
+                    <button id="start-countdown">Start</button>
+                    <button id="reset-countdown">Reset</button>
+                    <button id="back-countdown">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
