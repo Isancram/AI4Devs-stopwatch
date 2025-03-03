@@ -123,3 +123,22 @@ h1 {
 #clear-countdown {
     background-color: #999;
 }
+
+/* Confetti Animation */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    opacity: 0.7;
+    border-radius: 50%;
+    animation: confetti-fall linear infinite;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-10vh) translateX(0);
+    }
+    100% {
+        transform: translateY(100vh) translateX(calc(10vw - 5vw));
+    }
+}

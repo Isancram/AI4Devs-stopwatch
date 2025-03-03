@@ -53,3 +53,24 @@ No has incluido el fichero de estilos en el proyecto
 Prompt 5: En respuesta a "Entrada del tiempo con **teclado numérico**."
 
 Los numeros deben estar ordenados de menor a mayor
+
+[Se detecta un error en la cuenta atras]
+
+Se corrige y se introducen mejoras
+
+Prompt 6:
+
+He detectado que la cuenta atras (Countdown) no funciona. permite introducir los segundos pero deja de funcionar cuando das a Start
+
+Prompt 7:
+
+Perfecto. En la cuenta atrás al finalizar debe saltar confeti.
+
+Prompt 8:
+
+Debes introducir en el proyecto todos los ficheros. Los estilos nuevos incluidos.
+
+Prompt 9:
+
+Recuerda. Cuando finaliza la cuenta atrás debe saltar confeti. Actualiza todos los ficheros con esa nueva funcionalidad y genera el fichero zip con todos los ficheros del proyecto
+

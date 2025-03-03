@@ -70,17 +70,20 @@ document.getElementById("clear-countdown").addEventListener("click", () => {
 });
 
 function startCountdown() {
-    if (!countdownInterval) {
-        let startTime = Date.now();
+    if (!countdownInterval && countdownTime > 0) {
+        let endTime = Date.now() + countdownTime;
         countdownInterval = setInterval(() => {
-            let elapsed = Date.now() - startTime;
-            let remaining = countdownTime - elapsed;
+            let remaining = endTime - Date.now();
             if (remaining <= 0) {
                 clearInterval(countdownInterval);
-                countdownDisplay.textContent = "00:00:00.000";
+                countdownTime = 0;
+                updateCountdownDisplay();
                 countdownInterval = null;
+                document.getElementById("start-countdown").textContent = "Start";
+                launchConfetti(); // Llamada a la función de confeti
             } else {
-                countdownDisplay.textContent = updateCountdownDisplay();
+                countdownTime = remaining;
+                updateCountdownDisplay();
             }
         }, 10);
         document.getElementById("start-countdown").textContent = "Pause";
@@ -89,6 +92,27 @@ function startCountdown() {
         countdownInterval = null;
         document.getElementById("start-countdown").textContent = "Continue";
     }
+}
+
+function launchConfetti() {
+    const duration = 5 * 1000;
+    const animationEnd = Date.now() + duration;
+    const colors = ["#ff0000", "#00ff00", "#0000ff", "#ffbb00", "#ff00ff"];
+    
+    function frame() {
+        if (Date.now() > animationEnd) {
+            return;
+        }
+        const confettiElement = document.createElement("div");
+        confettiElement.classList.add("confetti");
+        confettiElement.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confettiElement.style.left = Math.random() * 100 + "vw";
+        confettiElement.style.animationDuration = Math.random() * 3 + 2 + "s";
+        document.body.appendChild(confettiElement);
+        setTimeout(() => document.body.removeChild(confettiElement), 5000);
+        requestAnimationFrame(frame);
+    }
+    frame();
 }
 
 document.getElementById("reset-countdown").addEventListener("click", () => {
